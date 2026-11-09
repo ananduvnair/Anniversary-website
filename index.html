@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Anniversary ✦ Forever & Always</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Floating Music Toggle (Always Available) -->
+  <button id="music-toggle" class="music-toggle" onclick="toggleMusic()" aria-label="Toggle Background Music"
+    title="Play / Pause Music">
+    <span class="music-bars">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+      <span class="bar bar-4"></span>
+    </span>
+    <span class="music-label" id="music-label">Music</span>
+  </button>
+
+  <!-- Background Music Audio -->
+  <audio id="bg-music" loop preload="auto">
+    <source id="music-source" src="music/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 1 — SURPRISE LANDING
+  ═══════════════════════════════════════════ -->
+  <section id="page-landing" class="page active">
+
+    <!-- Star canvas -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Floating hearts -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Center content -->
+    <div class="landing-content">
+      <div class="crown-icon">✦</div>
+
+      <p class="landing-eyebrow reveal-up delay-1">A message just for you</p>
+
+      <h1 class="landing-title reveal-up delay-2">
+        Happy<br />
+        <em>Anniversary</em>
+        <em>Lachuuu Kunjjee</em>
+        <p>💙💋</p>
+      </h1>
+
+      <div class="divider reveal-up delay-3">
+        <span class="divider-line"></span>
+        <span class="divider-diamond">◆</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <p class="landing-subtitle reveal-up delay-4">
+        Every moment with you is a universe<br />
+        I never want to leave.
+      </p>
+
+      <button class="cta-btn reveal-up delay-5" id="enter-btn" onclick="enterGalaxy()">
+        <span class="btn-text">Enter Our Universe</span>
+        <span class="btn-icon">→</span>
+        <span class="btn-ripple"></span>
+      </button>
+
+      <p class="landing-date reveal-up delay-6">November 11, &nbsp;✦&nbsp; Forever & Always</p>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scroll-hint">
+      <span class="scroll-dot"></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE TRANSITION OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div id="transition-overlay" class="transition-overlay">
+    <div class="transition-ring ring-1"></div>
+    <div class="transition-ring ring-2"></div>
+    <div class="transition-ring ring-3"></div>
+    <p class="transition-text">Our Story ✦</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 2 — INFINITY PHOTO SPHERE / GALAXY
+  ═══════════════════════════════════════════ -->
+  <section id="page-galaxy" class="page">
+
+    <!-- Deep space background canvas -->
+    <canvas id="galaxy-canvas"></canvas>
+
+    <!-- Nebula layers -->
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <!-- Galaxy header -->
+    <header class="galaxy-header">
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <div class="galaxy-title-wrap">
+        <span class="galaxy-eyebrow">Our Universe</span>
+        <h2 class="galaxy-title">Infinite <em>Memories</em></h2>
+      </div>
+      <div style="width: 80px;"></div>
+    </header>
+
+    <!-- Photo sphere container -->
+    <div class="sphere-wrap" id="sphere-wrap">
+      <div class="sphere-scene" id="sphere-scene">
+        <div class="sphere-container" id="sphere-container">
+          <!-- Photos injected by JS -->
+        </div>
+      </div>
+
+      <!-- Glow rings behind sphere -->
+      <div class="glow-ring ring-a"></div>
+      <div class="glow-ring ring-b"></div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="sphere-hint">
+      <span class="hint-icon">✦</span> Move mouse to look around · Drag to spin 360° · Click any memory
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-inner" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" alt="Memory" />
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="galaxy-footer">
+      <p>Made with <span class="heart-inline">♥</span> for you · Every photo, a star in our galaxy</p>
+    </footer>
+
+  </section>
+
+  <script src="photos.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

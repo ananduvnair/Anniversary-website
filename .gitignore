@@ -1,0 +1,30 @@
+# Ignore all photos inside photos/ but keep folder
+photos/*
+!photos/README.md
+!photos/.gitkeep
+
+# Ignore all songs/audio inside music/ but keep folder
+music/*
+!music/README.md
+!music/.gitkeep
+
+# Ignore common media formats anywhere just in case
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.avif
+*.mp3
+*.m4a
+*.wav
+*.ogg
+*.flac
+*.aac
+
+# System and editor files
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+
